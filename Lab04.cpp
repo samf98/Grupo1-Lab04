@@ -7,7 +7,6 @@ void llenarMatriz(int**, int);
 
 void liberarEspacio(int**);
 
-<<<<<<< HEAD
 void superior_clockwise(int**mint**,int**,int**);
 
 void superior_anticlockwise(int**,int**,int**,int**);
@@ -23,7 +22,7 @@ void izquierda_anticlockwise(int**,int**,int**,int**);
 void derecha_clockwise(int**mint**,int**,int**);
 
 void derecha_anticlockwise(int**,int**,int**,int**);
-=======
+
 void frontal_clockwise(int**,int**,int**,int**);
 
 void frontal_counterclockwise(int**,int**,int**,int**);
@@ -37,7 +36,7 @@ void izquierda_counterclockwise(int**,int**,int**,int**);
 void derecha_counterclockwise(int**,int**,int**,int**);
 
 void imprimirCubo(int**,int**,int**,int**,int**,int**);
->>>>>>> 7fc7c465a6cad69fd9ba15ba6005a88e2df7c07f
+
 
 int main() {
 
@@ -135,27 +134,27 @@ int main() {
       }
       case 5:
       {
-        //superior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        superior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
         break;
       }
       case 6:
       {
-        //superior_anticlockwise(matriz_frontal,matriz_derecha,matriz_trasera,matriz_izquierda);
+        superior_anticlockwise(matriz_frontal,matriz_derecha,matriz_trasera,matriz_izquierda);
         break;
       }
       case 7:
       {
-        //inferior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        inferior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
         break;
       }
       case 8:
       {
-        //inferior_anticlockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        inferior_anticlockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
         break;
       }
       case 9:
       {
-        //derecha_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
+        derecha_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
         break;
       }
       case 10:
@@ -165,7 +164,7 @@ int main() {
       }
       case 11:
       {
-        //izquierda_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
+        izquierda_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
         break;
       }
       case 12:
@@ -213,7 +212,6 @@ void liberarEspacio(int** matriz)
 
 }
 
-<<<<<<< HEAD
 //revisa movimiento clockwise de la cara superior
 void superior_clockwise(int**frontal, int**izquierda, int**trasera, int**derecha){
   int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
@@ -415,7 +413,7 @@ void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superi
    derecha[0][2] = posicion3;
 
  }
-=======
+
 void frontal_clockwise(int** superior, int** inferior, int** izquierda, int** derecha)
 {
   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
@@ -602,7 +600,7 @@ void derecha_counterclockwise(int** superior, int** inferior, int** frontal, int
   superior[0][2] = posicion3;
 
 }
-/*
+
 void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, int** trasera)
 {
   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
@@ -639,7 +637,7 @@ void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, i
   superior[0][1] = posicion2;
   superior[0][2] = posicion3;
 
-}*/
+}
 void imprimirCubo(int** front, int** back, int** up, int** down, int** left, int** right)
 {
   cout<<"Cara frontal"<<endl;
@@ -703,4 +701,3 @@ void imprimirCubo(int** front, int** back, int** up, int** down, int** left, int
   }
 
 }
->>>>>>> 7fc7c465a6cad69fd9ba15ba6005a88e2df7c07f
