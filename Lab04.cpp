@@ -1,6 +1,9 @@
 
 #include <iostream>
 
-int int main() {
-	return 0;
+
+
+int main() {
+  return 0;
+
 }
