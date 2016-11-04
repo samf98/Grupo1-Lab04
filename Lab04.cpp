@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int** crearMatriz(int**, int);
+void llenarMatriz(int**, int);
 
 void liberarEspacio(int**);
 
@@ -23,36 +23,42 @@ int main() {
   for (int i = 0; i < 3; i++) {
     matriz_frontal[i] = new int[3];
   }
+  llenarMatriz(matriz_frontal,1);
 
   matriz_trasera = new int*[3];
 
   for (int i = 0; i < 3; i++) {
     matriz_trasera[i] = new int[3];
   }
+  llenarMatriz(matriz_trasera,2);
 
   matriz_superior = new int*[3];
 
   for (int i = 0; i < 3; i++) {
     matriz_superior[i] = new int[3];
   }
+  llenarMatriz(matriz_superior,3);
 
   matriz_inferior = new int*[3];
 
   for (int i = 0; i < 3; i++) {
     matriz_inferior[i] = new int[3];
   }
+  llenarMatriz(matriz_inferior,4);
 
   matriz_izquierda = new int*[3];
 
   for (int i = 0; i < 3; i++) {
     matriz_izquierda[i] = new int[3];
   }
+  llenarMatriz(matriz_izquierda,5);
 
   matriz_derecha = new int*[3];
 
   for (int i = 0; i < 3; i++) {
     matriz_derecha[i] = new int[3];
   }
+  llenarMatriz(matriz_derecha,6);
   /*crearMatriz(matriz_frontal,1);
   crearMatriz(matriz_trasera,2);
   crearMatriz(matriz_superior,3);
@@ -69,26 +75,20 @@ int main() {
   return 0;
 
 }
-/*
-int** crearMatriz(int** matriz, int posicion)
-{
-  matriz = new int*[3];
-  cout<<"Matriz "<<posicion<<" creada"<<endl;
-  for(int i = 0; i < 3; i++)
-  {
-    matriz = new int[3];
-  }
 
-  for(i = 0; i < 3; i++)
+void llenarMatriz(int** matriz, int posicion)
+{
+  cout<<"Matriz "<<posicion<<" creada"<<endl;
+
+  for(int i = 0; i < 3; i++)
   {
     for(int j = 0; j < 3; j++)
     {
-      matriz[i][j] = i;
+      matriz[i][j] = posicion;
     }
   }
-  return matriz;
 
-}*/
+}
 
 void liberarEspacio(int** matriz)
 {
