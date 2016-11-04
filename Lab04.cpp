@@ -7,19 +7,19 @@ void llenarMatriz(int**, int);
 
 void liberarEspacio(int**);
 
-void superior_clockwise(int**, int**,int**,int**);
+void superior_clockwise(int**mint**,int**,int**);
 
 void superior_anticlockwise(int**,int**,int**,int**);
 
-void inferior_clockwise(int**, int**,int**,int**);
+void inferior_clockwise(int**mint**,int**,int**);
 
 void inferior_anticlockwise(int**,int**,int**,int**);
 
-void izquierda_clockwise(int**, int**,int**,int**);
+void izquierda_clockwise(int**mint**,int**,int**);
 
 void izquierda_anticlockwise(int**,int**,int**,int**);
 
-void derecha_clockwise(int**, int**,int**,int**);
+void derecha_clockwise(int**mint**,int**,int**);
 
 void derecha_anticlockwise(int**,int**,int**,int**);
 
@@ -214,7 +214,7 @@ void liberarEspacio(int** matriz)
 
 //revisa movimiento clockwise de la cara superior
 void superior_clockwise(int**frontal, int**izquierda, int**trasera, int**derecha){
-  int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+  int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
   posicion1 = frontal[0][0];
   posicion2 = frontal[0][1];
   posicion3 = frontal[0][2];
@@ -247,7 +247,7 @@ void superior_clockwise(int**frontal, int**izquierda, int**trasera, int**derecha
 
 //revisa movimiento clockwise de la cara inferior
 void inferior_clockwise(int**frontal, int** izquierda, int** trasera, int**derecha){
-  int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+  int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
   posicion1 = frontal[0][0];
   posicion2 = frontal[0][1];
   posicion3 = frontal[0][2];
@@ -280,7 +280,7 @@ void inferior_clockwise(int**frontal, int** izquierda, int** trasera, int**derec
 
 //revisa movimiento clockwise de cara derecha
 void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superior){
-  int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+  int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
   posicion1 = frontal[0][2];
   posicion2 = frontal[1][2];
   posicion3 = frontal[2][2];
@@ -293,9 +293,9 @@ void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superi
   posicion5 = superior[1][2];
   posicion6 = superior[2][2];
 
-  superior[0][2] = trasera[0][2];
-  superior[1][2] = trasera[1][2];
-  superior[2][2] = trasera[2][2];
+  superior = trasera[0][2];
+  superior = trasera[1][2];
+  superior = trasera[2][2];
 
   posicion1 = trasera[0][2];
   posicion2 = trasera[1][2];
@@ -310,13 +310,13 @@ void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superi
   posicion6 = inferior[2][2];
 
   inferior[0][2] = frontal[0][2];
-  inferior[1][2] = frontal[1][2];
+  inferior[1][2] = fronta;[1][2];
   inferior[2][2] = frontal[2][2];
  }
 
  //revisa movimiento clockwise de cara izquierda
  void izquierda_clockwise(int**frontal, int** inferior, int**trasera, int** superior){
-   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+   int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
    posicion1 = frontal[0][2];
    posicion2 = frontal[1][2];
    posicion3 = frontal[2][2];
@@ -346,13 +346,13 @@ void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superi
    posicion6 = inferior[2][2];
 
    inferior[0][2] = frontal[0][2];
-   inferior[1][2] = frontal[1][2];
+   inferior[1][2] = fronta;[1][2];
    inferior[2][2] = frontal[2][2];
  }
 
 //revisa movimiento counterclockwise de cara superior
  void superior_anticlockwise(int**frontal, int**derecha, int**trasera, int** izquierda){
-   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+   int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
    posicion1 = frontal[0][0];
    posicion2 = frontal[0][1];
    posicion3 = frontal[0][2];
@@ -383,7 +383,7 @@ void derecha_clockwise(int**frontal, int** inferior, int** trasera, int** superi
  }
 
  void inferior_anticlockwise(int**frontal, int**izquierda, int** trasera, int**derecha){
-   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+   int posicion1, int posicion2, int posicion3, int posicion4, int posicion5, int posicion6;
    posicion1 = frontal[0][0];
    posicion2 = frontal[0][1];
    posicion3 = frontal[0][2];
@@ -605,14 +605,14 @@ void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, i
 {
   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
 
-  //Mod de cara Izquierda
-  posicion1 = izquierda[0][0];
-  posicion2 = izquierda[1][0];
-  posicion3 = izquierda[2][0];
+  //Mod de cara frontal
+  posicion1 = frontal[0][0];
+  posicion2 = frontal[1][0];
+  posicion3 = frontal[2][0];
 
-  izquierda[0][0] = superior[0][0];
-  izquierda[1][0] = superior[0][1];
-  izquierda[2][0] = superior[0][2];
+  frontal[0][0] = superior[0][0];
+  frontal[1][0] = superior[0][1];
+  frontal[2][0] = superior[0][2];
 
   //Mod de cara Inferior
   posicion4 = inferior[0][0];
@@ -623,14 +623,14 @@ void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, i
   inferior[0][1] = posicion2;
   inferior[0][2] = posicion3;
 
-  //Mod de cara Derecha
-  posicion1 = derecha[0][2];
-  posicion2 = derecha[1][2];
-  posicion3 = derecha[2][2];
+  //Mod de cara trasera
+  posicion1 = trasera[0][2];
+  posicion2 = trasera[1][2];
+  posicion3 = trasera[2][2];
 
-  derecha[0][2] = posicion4;
-  derecha[1][2] = posicion5;
-  derecha[2][2] = posicion6;
+  trasera[0][2] = posicion4;
+  trasera[1][2] = posicion5;
+  trasera[2][2] = posicion6;
 
   //Mod de cara Superior
   superior[0][0] = posicion1;
