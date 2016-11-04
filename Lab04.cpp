@@ -32,6 +32,10 @@ void trasera_clockwise(int**,int**,int**,int**);
 
 void trasera_counterclockwise(int**,int**,int**,int**);
 
+void izquierda_counterclockwise(int**,int**,int**,int**);
+
+void derecha_counterclockwise(int**,int**,int**,int**);
+
 void imprimirCubo(int**,int**,int**,int**,int**,int**);
 >>>>>>> 7fc7c465a6cad69fd9ba15ba6005a88e2df7c07f
 
@@ -127,6 +131,46 @@ int main() {
       case 4:
       {
         trasera_counterclockwise(matriz_superior,matriz_inferior,matriz_izquierda,matriz_derecha);
+        break;
+      }
+      case 5:
+      {
+        //superior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        break;
+      }
+      case 6:
+      {
+        //superior_anticlockwise(matriz_frontal,matriz_derecha,matriz_trasera,matriz_izquierda);
+        break;
+      }
+      case 7:
+      {
+        //inferior_clockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        break;
+      }
+      case 8:
+      {
+        //inferior_anticlockwise(matriz_frontal,matriz_izquierda,matriz_trasera,matriz_derecha);
+        break;
+      }
+      case 9:
+      {
+        //derecha_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
+        break;
+      }
+      case 10:
+      {
+        derecha_counterclockwise(matriz_superior,matriz_inferior,matriz_frontal,matriz_trasera);
+        break;
+      }
+      case 11:
+      {
+        //izquierda_clockwise(matriz_frontal,matriz_inferior,matriz_trasera,matriz_superior);
+        break;
+      }
+      case 12:
+      {
+        //izquierda_counterclockwise();
         break;
       }
     }
@@ -521,6 +565,81 @@ void trasera_counterclockwise(int** superior, int** inferior, int** izquierda, i
 
 }
 
+void derecha_counterclockwise(int** superior, int** inferior, int** frontal, int** trasera)
+{
+  int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+
+  //Mod de cara Frontal
+  posicion1 = superior[0][0];
+  posicion2 = superior[0][1];
+  posicion3 = superior[0][2];
+
+  frontal[0][2] = superior[0][0];
+  frontal[1][2] = superior[0][1];
+  frontal[2][2] = superior[0][2];
+
+  //Mod de cara Inferior
+  posicion4 = inferior[0][2];
+  posicion5 = inferior[1][2];
+  posicion6 = inferior[2][2];
+
+  inferior[0][2] = posicion1;
+  inferior[1][2] = posicion2;
+  inferior[2][2] = posicion3;
+
+  //Mod de cara Trasera
+  posicion1 = trasera[0][2];
+  posicion2 = trasera[1][2];
+  posicion3 = trasera[2][2];
+
+  trasera[0][2] = posicion4;
+  trasera[1][2] = posicion5;
+  trasera[2][2] = posicion6;
+
+  //Mod de cara Superior
+  superior[0][0] = posicion1;
+  superior[0][1] = posicion2;
+  superior[0][2] = posicion3;
+
+}
+/*
+void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, int** trasera)
+{
+  int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
+
+  //Mod de cara Izquierda
+  posicion1 = izquierda[0][0];
+  posicion2 = izquierda[1][0];
+  posicion3 = izquierda[2][0];
+
+  izquierda[0][0] = superior[0][0];
+  izquierda[1][0] = superior[0][1];
+  izquierda[2][0] = superior[0][2];
+
+  //Mod de cara Inferior
+  posicion4 = inferior[0][0];
+  posicion5 = inferior[0][1];
+  posicion6 = inferior[0][2];
+
+  inferior[0][0] = posicion1;
+  inferior[0][1] = posicion2;
+  inferior[0][2] = posicion3;
+
+  //Mod de cara Derecha
+  posicion1 = derecha[0][2];
+  posicion2 = derecha[1][2];
+  posicion3 = derecha[2][2];
+
+  derecha[0][2] = posicion4;
+  derecha[1][2] = posicion5;
+  derecha[2][2] = posicion6;
+
+  //Mod de cara Superior
+  superior[0][0] = posicion1;
+  superior[0][1] = posicion2;
+  superior[0][2] = posicion3;
+
+}*/
 void imprimirCubo(int** front, int** back, int** up, int** down, int** left, int** right)
 {
   cout<<"Cara frontal"<<endl;
