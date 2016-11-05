@@ -223,21 +223,21 @@ void superior_clockwise(int**frontal, int**izquierda, int**trasera, int**derecha
   frontal[0][1] = izquierda[0][1];
   frontal[0][2] = izquierda[0][2];
 
-  posicion4 = derecha[0][0];
-  posicion5 = derecha[0][1];
-  posicion6 = derecha[0][2];
+  posicion4 = trasera[0][0];
+  posicion5 = trasera[0][1];
+  posicion6 = trasera[0][2];
 
-  derecha[0][0] = posicion1;
-  derecha[0][1] = posicion2;
-  derecha[0][2] = posicion3;
+  trasera[0][0] = posicion1;
+  trasera[0][1] = posicion2;
+  trasera[0][2] = posicion3;
 
-  posicion1 = trasera[0][0];
-  posicion2 = trasera[0][1];
-  posicion3 = trasera[0][2];
+  posicion1 = derecha[0][0];
+  posicion2 = derecha[0][1];
+  posicion3 = derecha[0][2];
 
-  trasera[0][0] = posicion4;
-  trasera[0][1] = posicion5;
-  trasera[0][2] = posicion6;
+  derecha[0][0] = posicion4;
+  derecha[0][1] = posicion5;
+  derecha[0][2] = posicion6;
 
   izquierda[0][0] = posicion1;
   izquierda[0][1] = posicion2;
@@ -449,7 +449,6 @@ void frontal_clockwise(int** superior, int** inferior, int** izquierda, int** de
   superior[2][0] = posicion1;
   superior[2][1] = posicion2;
   superior[2][2] = posicion3;
-
 }
 
 void frontal_counterclockwise(int** superior, int** inferior, int** izquierda, int** derecha)
@@ -476,19 +475,17 @@ void frontal_counterclockwise(int** superior, int** inferior, int** izquierda, i
 
   //Mod de cara Derecha
   posicion1 = derecha[0][0];
-  posicion2 = derecha[1][0];
-  posicion3 = derecha[2][0];
+  posicion2 = derecha[0][1];
+  posicion3 = derecha[0][2];
 
   derecha[0][0] = posicion4;
-  derecha[1][0] = posicion5;
-  derecha[2][0] = posicion6;
+  derecha[0][1] = posicion5;
+  derecha[0][2] = posicion6;
 
   //Mod de cara Superior
   superior[2][0] = posicion1;
   superior[2][1] = posicion2;
   superior[2][2] = posicion3;
-
-  //Mod de cara Frontal
 }
 
 void trasera_clockwise(int** superior, int** inferior, int** izquierda, int** derecha)
@@ -603,7 +600,7 @@ void derecha_counterclockwise(int** superior, int** inferior, int** frontal, int
   superior[0][2] = posicion3;
 
 }
-/*
+
 void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, int** trasera)
 {
   int posicion1, posicion2, posicion3, posicion4, posicion5, posicion6;
@@ -635,12 +632,12 @@ void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, i
   trasera[1][2] = posicion5;
   trasera[2][2] = posicion6;
 
-  //Mod de cara Superior
+  
   superior[0][0] = posicion1;
   superior[0][1] = posicion2;
   superior[0][2] = posicion3;
 
-}*/
+}
 void imprimirCubo(int** front, int** back, int** up, int** down, int** left, int** right)
 {
   cout<<"Cara frontal"<<endl;
