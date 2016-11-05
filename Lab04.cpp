@@ -632,7 +632,7 @@ void izquierda_counterclockwise(int** superior, int** inferior, int** frontal, i
   trasera[1][2] = posicion5;
   trasera[2][2] = posicion6;
 
-  //Mod de cara Superior
+  
   superior[0][0] = posicion1;
   superior[0][1] = posicion2;
   superior[0][2] = posicion3;
